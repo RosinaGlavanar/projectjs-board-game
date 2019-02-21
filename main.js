@@ -1,0 +1,1 @@
+CanvasManager.init("canvas");
