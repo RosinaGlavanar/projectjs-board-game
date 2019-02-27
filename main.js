@@ -1,17 +1,17 @@
-CanvasManager.init("canvas");
-
+RectManager.init("canvas");
+RectManager.generateBoard();
 var elementKnight = document.getElementById("Kn");
-var elementDwarf = document.getElementById("Dr");
+var elementDwarf = document.getElementById("Dw");
 var elementElf = document.getElementById("El");
 
-var selectedItems;
+var selectedItems = null;
 
-elementKnight.addEventListener("click", function() {
-  console.log("Hui");
+elementKnight.addEventListener("click", function(){
+  selectedItems = "K";
 });
-elementDwarf.addEventListener("click", function() {
-  console.log("Hui");
+elementDwarf.addEventListener("click", function(){
+  selectedItems = "D";
 });
-elementElf.addEventListener("click", function() {
-  console.log("Hui");
+elementElf.addEventListener("click", function(){
+  selectedItems = "E";
 });
