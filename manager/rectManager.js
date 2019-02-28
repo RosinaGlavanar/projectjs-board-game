@@ -29,7 +29,6 @@ RectManager.generateBoard = function(){
           this.color = "#000";
         }
       }
-//#bf5f82
       this.count++;
       if(this.pl1Territory > i || i >= this.pl2Territory){
         this.color = (i * 9 + j) % 2 ? "#fff" : "#f48fb1";
@@ -64,8 +63,10 @@ RectManager.clickOnCell = function(){
       if(boardRows[i].cellContainsCoordinates(e.clientX, e.clientY)){
         if(selectedItems != null){
           if(boardRows[i].symbol == null){
+            if(i > 44 || i <= 17){
             boardRows[i].symbol = selectedItems;
             boardRows[i].addSymbol();
+            }
           }else{
             console.log("place taken");
           }

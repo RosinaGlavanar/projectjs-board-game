@@ -8,7 +8,7 @@ class Player{
     new Dwarf(),
     new Dwarf()
     ];
-  }
+  } //general list of heroes
 }
 
 class fullGame {
@@ -21,7 +21,7 @@ class fullGame {
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ];
+    ]; //game board
 
     this.gameOver = false;
 }
@@ -93,17 +93,25 @@ class Dwarf extends Figure{
     }
 }
 
-// Правила за лекуване
+// В рамките на една атака е възможно да се случи, ситуация наречена пропускане
+// на удар или полу-атака. Ситуациите се случват при случайно хвърляне на три зара. 
 var min = 1, max = 6;
 function getRandomInt(min, max){
     return Math.floor(Math.random() * max) + min;  
 }
 
 var sumNumbersOfZar = getRandomInt(min, max) + getRandomInt(min, max) + getRandomInt(min, max);
+
+// • Ако сумата от заровете е равна на текущото количество кръв на атакуваната
+// единица в настоящият момент, то атаката е неуспешна и щети не се калкулират
     if(sumNumbersOfZar == currentHealthPoints){
-        damage == 0; 
+        damage == 0;
+
+// • Ако сумата от заровете е равна на най-малката им възможна сума, то
+// атаката се нарича полу-атака и се калкулират само половината от щетите.
     }else if(sumNumbersOfZar == min * 3){
         damage == damage/2;
+        
     }else{
         damage == damage;
     }
